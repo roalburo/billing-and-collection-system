@@ -1,0 +1,468 @@
+.LegitDBoard-container {
+    position: relative;
+    z-index: 1; 
+    display: flex;
+    flex-direction: column;
+    min-height: 91vh; /* Ensure it spans the full viewport height */
+    justify-content: flex-start; /* Align content to the top */
+    align-items: center;
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.LegitDBoard-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the full container height */
+    background: url("images/bg.png") no-repeat center center;
+    background-size: cover; /* Stretch image to cover container */
+    opacity: 0.5; 
+    z-index: -1; 
+}
+
+
+.LegitDBoard-content {
+    font-family: 'Montserrat';
+    position: relative;
+    z-index: 1; 
+    width: 90%; 
+    max-width: 600px; 
+    background-color: #e4e4e4;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(44, 46, 48, 0.8) 0 0 30px 3px;
+    margin: auto; 
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.btn {
+    font-family: 'Montserrat';
+    display: inline-block;
+    font-weight: 400;
+    color: #fefefe;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 1rem;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #103052;
+    margin-bottom: 2vh;
+    z-index: 2; 
+}
+
+
+.table th {
+    font-size: 20px;
+    pointer-events: auto;
+}
+
+.custom-font-upndown {
+    font-size: 20px !important; 
+}
+
+.custom-font-studio {
+    font-size: 20px !important; 
+}
+
+.btn-group {
+    float: right;
+}
+
+.btn-group .btn:hover {
+    background-color: gray; 
+    border-color: gray;
+}
+
+.unit-selection-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+
+
+.calendar-content {
+    position: relative;
+    margin-left: auto;
+    margin-top: 0; /* Align with the dashboard-container */
+    margin-right: 2rem;
+    width: 320px; /* Fixed width to match the design */
+    background-color: #ffffff;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #103052;
+    text-align: center;
+}
+
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); /* Ensure exactly 7 columns */
+    gap: 4px; /* Space between calendar cells */
+}
+
+.calendar-day {
+    width: 100%; /* Make each cell responsive */
+    aspect-ratio: 1; /* Maintain square dimensions */
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calendar-day.rent-due {
+    background-color: #ffd700; /* Highlight rent-due days */
+}
+
+.calendar-day.today {
+    background-color: #103052;
+    color: white;
+    font-weight: bold;
+}
+
+.calendar-day.empty {
+    visibility: hidden; /* Hide empty slots */
+}
+
+
+
+.rent-content h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #103052;
+    text-align: left;
+}
+
+.rent-summary {
+    line-height: 2; /* Optional: Adjust line spacing */
+}
+
+
+
+
+.LegitDBoard-container {
+    display: flex; /* Arrange content side by side */
+    justify-content: space-between;
+    padding: 1rem;
+    gap: 1rem; /* Space between summary-content and rent-content */
+}
+
+
+
+.summary-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* Adds spacing between the elements */
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #103052;
+}
+
+.summary-header h3 {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 0; /* Remove unwanted margins */
+    text-align: center; /* Ensures the header text aligns properly */
+    flex-grow: 0; /* Prevents the header from growing unnecessarily */
+}
+
+.arrow-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #103052;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.arrow-btn:hover {
+    background: #103052; /* Adds hover effect for interactivity */
+    color: #fefefe;
+}
+
+
+.summary-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+.option-btn {
+    flex: 1;
+    padding: 0.5rem;
+    margin: 0 0.25rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #103052;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.option-btn.active,
+.option-btn:hover {
+    background-color: #103052;
+    color: #ffffff;
+    border-color: #103052;
+}
+
+.summary-body {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+}
+
+
+.dashboard-container h3 {
+    text-align: left;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #103052;
+    margin-bottom: 1.5rem;
+}
+
+.dashboard-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); 
+    gap: 3rem;
+}
+
+.dashboard-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #103052; /* Dark blue background */
+    color: white; /* White text color */
+    padding: 2rem; /* Increase padding for larger box size */
+    min-width: 150px; /* Set a minimum width */
+    min-height: 150px; /* Set a minimum height */
+    text-align: center;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow for emphasis */
+    border-radius: 10px; /* Optional: Add rounded corners for better design */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dashboard-box:hover {
+    transform: translateY(-5px); /* Slight hover effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+    background-color: #1a5492; /* Dark blue background */
+}
+
+.dashboard-number {
+    font-size: 2.5rem;
+    margin: 0;
+    font-weight: bold;
+    text-align: left; /* Aligns the text to the left */
+    width: 100%; /* Ensures alignment within the container */
+}
+
+.dashboard-label {
+    margin-left: -10px;
+    font-size: 1rem;
+    text-transform: capitalize;
+    text-align: left; /* Aligns the text to the left */
+    width: 100%; /* Ensures alignment within the container */
+}
+
+
+
+
+.units-list, .rent-due-list, .maintenance-list, .tenancy, .all-entries-list {
+    max-height: 400px; /* Adjust height as needed */
+    overflow-y: auto; /* Add vertical scroll */
+    padding: 0;
+    margin: 0;
+    list-style: none;   
+}
+
+.units-list li, .rent-due-list li, .tenancy li, .maintenance-list li, .all-entries-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+.hidden-date-input {
+    display: block; /* Make the input visible */
+    width: 120px; /* Adjust size */
+    height: 30px; /* Adjust size */
+    border: 1px solid #103052; /* Gray border */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 14px; /* Adjust text size */
+    padding: 4px; /* Add padding for better appearance */
+    cursor: pointer;
+    color: #103052;
+    font-weight: bold;
+}
+
+.hidden-date-input::-webkit-calendar-picker-indicator {
+    cursor: pointer; /* Change cursor for the calendar icon */
+}
+
+.hidden-date-input:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #7f8c8d; /* Highlight border on focus */
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for focus */
+}
+
+
+
+.below-container {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; /* Ensure children stretch vertically */
+    gap: 1.5rem; /* Adjust gap between dashboard-container and rent-content */
+    width: 100%; /* Occupy full width */
+}
+
+.dashboard-container {
+    flex: 3; /* Occupy three parts of the available space */
+    max-width: 70%; /* Limit width to avoid it taking too much space */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding in width calculations */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks properly */
+}
+
+.rent-content {
+    flex: 1; /* Occupy one part of the available space */
+    max-width: 30%; /* Ensure rent-content is smaller compared to dashboard-container */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding in width calculations */
+    display: flex;
+    flex-direction: column; /* Ensure content stacks properly */
+    font-size: 1.3rem;
+
+}
+
+
+.summary-content {
+    width: 100%; /* Full width below */
+    background-color: #ffffff;
+    padding: 1.5rem;
+    height: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Include padding in size calculations */
+}
+
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .below-container {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    .dashboard-container,
+    .rent-content {
+        width: 100%; /* Make both containers occupy full width */
+    }
+}
+
+.dashboard-boxes {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default: 5 columns */
+    gap: 2rem; /* Space between boxes */
+    width: 100%; /* Ensure boxes fit the container */
+    padding: 1rem;
+}
+
+.dashboard-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #103052; /* Dark blue background */
+    color: white; /* White text color */
+    padding: 2rem;
+    min-width: 120px; /* Set a minimum width */
+    min-height: 120px; /* Set a minimum height */
+    text-align: center;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Slightly larger shadow for emphasis */
+    border-radius: 10px; /* Optional: Add rounded corners for better design */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer; /* Indicate interactivity */
+}
+
+.dashboard-box:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Emphasize shadow */
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .dashboard-boxes {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns for larger tablets */
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-boxes {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns for smaller tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-boxes {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for small devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-boxes {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for very small screens */
+    }
+    .dashboard-box {
+        padding: 1.5rem; /* Reduce padding for smaller screens */
+    }
+}
+

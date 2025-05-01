@@ -1,0 +1,87 @@
+.account-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    min-height: 91vh; /* Ensure it spans the full viewport height */
+    gap: 1.5rem;
+    overflow: hidden;
+}
+
+.account-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Ensure it covers the full container height */
+    background: url("images/bg.png") no-repeat center center;
+    background-size: cover; /* Stretch image to cover container */
+    opacity: 0.5;
+    z-index: -1;
+}
+
+.account-content {
+    font-family: 'Montserrat';
+    position: relative;
+    z-index: 1;
+    width: 80%;
+    background-color: #e4e4e4;
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: rgba(44, 46, 48, 0.8) 0 0 30px 3px;
+}
+
+
+.clickable {
+    font-size: 1rem;
+    color: #2A3B4D;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.2s;
+}
+
+.clickable:hover {
+    color: #517993;
+}
+
+.text-danger {
+    color: #B32A36;
+}
+
+
+.modal-content .btn-danger {
+    background-color: #B32A36;
+    border: none;
+    color: #fefefe;
+}
+
+.modal-content .btn-danger:hover {
+    background-color: #99232E;
+}
+
+/* Close button */
+.close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    color: #000;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #dc3545;
+}
+
+@media (max-width: 576px) {
+    .contract-content {
+        padding: 1.5rem;
+    }
+
+    .modal-content {
+        padding: 1.5rem;
+    }
+}
